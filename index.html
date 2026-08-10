@@ -116,6 +116,7 @@
 </head>
 <body class="antialiased selection:bg-primary selection:text-white">
 
+    <!-- ================= NAVBAR ================= -->
     <nav class="fixed w-full z-50 transition-all duration-300 py-4" id="navbar">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold tracking-tighter text-white">
@@ -151,7 +152,9 @@
             <a href="#resume" class="px-8 py-3 mt-4 text-lg font-semibold text-white bg-primary rounded-full mobile-link">View Resume</a>
         </div>
     </nav>
+    <!-- ================= END NAVBAR ================= -->
 
+    <!-- ================= HERO SECTION ================= -->
     <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
         <!-- Background subtle glow -->
         <div class="absolute top-1/4 -left-64 w-96 h-96 bg-primary/20 rounded-full mix-blend-screen filter blur-[120px] opacity-50"></div>
@@ -234,7 +237,9 @@
             </div>
         </div>
     </section>
+    <!-- ================= END HERO SECTION ================= -->
 
+    <!-- ================= EXPERTISE / SERVICES SECTION ================= -->
     <section id="expertise" class="py-24 relative z-10 border-t border-gray-800/50 bg-dark/50">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 reveal">
@@ -245,11 +250,16 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Skill Card 1 -->
+            <!-- 3x2 Responsive Grid: 1 col on mobile, 2 cols on tablet, 3 cols on desktop -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1: Custom Web Development -->
                 <div class="card bg-card border border-gray-800 rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300 reveal group">
                     <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                        <i class="ph ph-desktop text-3xl"></i>
+                        <!-- Inline SVG: Monitor/Code -->
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-3">Custom Web Development</h4>
                     <p class="text-gray-400 text-sm leading-relaxed">
@@ -257,10 +267,13 @@
                     </p>
                 </div>
 
-                <!-- Skill Card 2 -->
+                <!-- Card 2: WordPress Mastery -->
                 <div class="card bg-card border border-gray-800 rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300 reveal group" style="transition-delay: 100ms;">
                     <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                        <i class="ph ph-wordpress-logo text-3xl"></i>
+                        <!-- Inline SVG: CMS/Layout Blocks -->
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                        </svg>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-3">WordPress Mastery</h4>
                     <p class="text-gray-400 text-sm leading-relaxed">
@@ -268,129 +281,262 @@
                     </p>
                 </div>
 
-                <!-- Skill Card 3 -->
+                <!-- Card 3: SEO & Digital Marketing -->
                 <div class="card bg-card border border-gray-800 rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300 reveal group" style="transition-delay: 200ms;">
                     <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                        <i class="ph ph-magnifying-glass text-3xl"></i>
+                        <!-- Inline SVG: Search/Analytics Growth -->
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-3">SEO & Digital Marketing</h4>
                     <p class="text-gray-400 text-sm leading-relaxed">
-                        Implementing on-page SEO, optimized content strategies, and performance tweaks to ensure your brand is visible and ranks well on search engines.
+                        Implementing end-to-end SEO strategies, digital campaigns, and performance tracking to ensure your brand is visible and ranks above competitors.
                     </p>
                 </div>
+
+                <!-- Card 4: On-Page SEO -->
+                <div class="card bg-card border border-gray-800 rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300 reveal group" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <!-- Inline SVG: Document Check / Tag Optimization -->
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">On-Page SEO</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Optimizing website structure, header tags, keyword mapping, and internal linking to maximize organic relevance and search engine visibility.
+                    </p>
+                </div>
+
+                <!-- Card 5: Website Speed & Technical Optimization -->
+                <div class="card bg-card border border-gray-800 rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300 reveal group" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <!-- Inline SVG: Lightning/Speed -->
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Technical & Speed Opt.</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Auditing Core Web Vitals, streamlining code, and optimizing caching to make sure your website loads instantly on every mobile device and desktop.
+                    </p>
+                </div>
+
+                <!-- Card 6: Digital Presence & Brand Strategy -->
+                <div class="card bg-card border border-gray-800 rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300 reveal group" style="transition-delay: 300ms;">
+                    <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <!-- Inline SVG: Target/Strategy -->
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Digital Presence Strategy</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Combining competitive analysis, conversion rate optimization (CRO), and user flow planning to transform your online brand into a reliable client acquisition channel.
+                    </p>
+                </div>
+
             </div>
         </div>
     </section>
+    <!-- ================= END EXPERTISE SECTION ================= -->
 
+    <!-- ================= SELECTED WORK / PROJECTS SECTION ================= -->
     <section id="work" class="py-24">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="mb-16 reveal">
                 <h2 class="text-primary font-semibold tracking-wide uppercase text-sm mb-3">Selected Work</h2>
                 <h3 class="text-3xl sm:text-4xl font-bold text-white mb-6">Turning Ideas into Digital Reality</h3>
-                <p class="text-gray-400 max-w-2xl">A curated selection of my 5+ recent projects. Each project represents a unique challenge solved through a blend of development, design, and strategic marketing.</p>
+                <p class="text-gray-400 max-w-2xl">A curated selection of my recent projects. Each project represents a unique challenge solved through a blend of development, design, and strategic marketing.</p>
             </div>
 
             <div class="space-y-24">
                 
-                <!-- Project 1 -->
+                <!-- Project 1: TheRightWay -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center reveal">
                     <div class="rounded-3xl overflow-hidden border border-gray-800 shadow-2xl group relative h-[300px] sm:h-[400px]">
-                        <img src="https://placehold.co/800x600/1a2027/0ea5e9?text=Project+1+Preview" alt="Project 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <img src="https://placehold.co/800x600/1a2027/0ea5e9?text=TheRightWay+Project+Preview" alt="TheRightWay Preview" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <a href="#" class="px-6 py-3 bg-white text-dark font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">View Live Site</a>
+                            <a href="https://rightwaypmc.in/" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-white text-dark font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">Visit Live Site</a>
                         </div>
                     </div>
                     <div>
-                        <h4 class="text-2xl font-bold text-white mb-2">Real Estate Firm Digital Overhaul</h4>
+                        <!-- Client Logo Banner -->
+                        <div class="bg-dark/40 border border-gray-800 rounded-xl px-4 py-2 mb-4 inline-block">
+                            <img src="cropped-cropped-cropped-cropped-cropped-TheRightWay-Logo-768x256.png" alt="TheRightWay Logo" class="h-8 md:h-10 w-auto object-contain">
+                        </div>
+                        
+                        <h4 class="text-2xl font-bold text-white mb-2">TheRightWay — Urban Redevelopment Platform</h4>
                         <p class="text-primary font-medium mb-6">Role: Lead Developer & SEO Strategist</p>
                         
                         <div class="space-y-4 text-gray-400 mb-8">
-                            <p><strong class="text-gray-200">The Challenge:</strong> A local real estate business needed a modern platform to list properties and generate leads organically.</p>
-                            <p><strong class="text-gray-200">The Solution:</strong> Built a custom, lightning-fast WordPress theme integrated with a property management system. Applied strict on-page SEO principles and localized content strategy.</p>
-                            <p><strong class="text-gray-200">The Result:</strong> 40% increase in organic local traffic within 3 months and a significantly improved lead conversion rate.</p>
+                            <p><strong class="text-gray-200">The Challenge:</strong> A project management consultancy needed a professional digital platform to present redevelopment services to housing societies and commercial builders.</p>
+                            <p><strong class="text-gray-200">The Solution:</strong> Engineered a custom, lightning-fast WordPress architecture with structured service indexes, localized on-page SEO, and a conversion-oriented user journey.</p>
+                            <p><strong class="text-gray-200">The Result:</strong> Established an authoritative online brand presence and created a reliable digital touchpoint for high-value client acquisitions.</p>
                         </div>
 
                         <div class="flex flex-wrap gap-2 mb-8">
                             <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">WordPress</span>
-                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">PHP</span>
-                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">Local SEO</span>
-                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">Tailwind CSS</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">Elementor</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">On-Page SEO</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">Custom CSS</span>
                         </div>
-                        <a href="#" class="inline-flex items-center gap-2 text-primary hover:text-white transition-colors font-medium">
-                            Read Full Case Study <i class="ph ph-arrow-right"></i>
+                        <a href="https://rightwaypmc.in/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-primary hover:text-white transition-colors font-medium">
+                            Visit Live Site <i class="ph ph-arrow-up-right"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
+                <!-- Project 2: SQL Leads -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center reveal">
                     <div class="order-2 lg:order-1">
-                        <h4 class="text-2xl font-bold text-white mb-2">Tech Startup Landing Page</h4>
-                        <p class="text-primary font-medium mb-6">Role: Frontend Developer</p>
+                        <!-- Client Logo Banner -->
+                        <div class="bg-dark/40 border border-gray-800 rounded-xl px-4 py-2 mb-4 inline-block">
+                            <img src="SQL-Leads-Logo-1.webp" alt="SQL Leads Logo" class="h-8 md:h-10 w-auto object-contain">
+                        </div>
+                        
+                        <h4 class="text-2xl font-bold text-white mb-2">SQL Leads — Lead Generation Platform</h4>
+                        <p class="text-primary font-medium mb-6">Role: Full-Stack Web Developer</p>
                         
                         <div class="space-y-4 text-gray-400 mb-8">
-                            <p><strong class="text-gray-200">The Challenge:</strong> A new SaaS startup needed a high-converting, animated landing page to build a waitlist before launch.</p>
-                            <p><strong class="text-gray-200">The Solution:</strong> Developed a custom responsive single-page application focused on micro-interactions and performance optimization to ensure zero drop-off from slow loading.</p>
-                            <p><strong class="text-gray-200">The Result:</strong> Achieved a 98/100 Google Lighthouse score and helped capture over 1,000 early sign-ups.</p>
+                            <p><strong class="text-gray-200">The Challenge:</strong> A specialized B2B firm needed a high-converting, modern web presence to capture and qualify enterprise lead inquiries.</p>
+                            <p><strong class="text-gray-200">The Solution:</strong> Designed and developed a responsive, performance-tuned web application featuring streamlined lead capture funnels and clean visual hierarchy.</p>
+                            <p><strong class="text-gray-200">The Result:</strong> Delivered a friction-free user experience with optimized page load speeds and enhanced conversion metrics.</p>
                         </div>
 
                         <div class="flex flex-wrap gap-2 mb-8">
-                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">HTML/CSS/JS</span>
-                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">Figma to Code</span>
-                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">Performance Opt.</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">Web Development</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">Lead Funnels</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">Speed Opt.</span>
                         </div>
-                        <a href="#" class="inline-flex items-center gap-2 text-primary hover:text-white transition-colors font-medium">
-                            View Live Site <i class="ph ph-arrow-right"></i>
+                        <a href="https://sqlleads.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-primary hover:text-white transition-colors font-medium">
+                            Visit Live Site <i class="ph ph-arrow-up-right"></i>
                         </a>
                     </div>
                     <div class="order-1 lg:order-2 rounded-3xl overflow-hidden border border-gray-800 shadow-2xl group relative h-[300px] sm:h-[400px]">
-                        <img src="https://placehold.co/800x600/1a2027/0ea5e9?text=Project+2+Preview" alt="Project 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <img src="https://placehold.co/800x600/1a2027/0ea5e9?text=SQL+Leads+Project+Preview" alt="SQL Leads Preview" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <a href="#" class="px-6 py-3 bg-white text-dark font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">View Live Site</a>
+                            <a href="https://sqlleads.com/" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-white text-dark font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">Visit Live Site</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 3 -->
+                <!-- Project 3: Kysa (E-Commerce Fashion Store) -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center reveal">
                     <div class="rounded-3xl overflow-hidden border border-gray-800 shadow-2xl group relative h-[300px] sm:h-[400px]">
-                        <img src="https://placehold.co/800x600/1a2027/0ea5e9?text=Project+3+Preview" alt="Project 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <img src="https://placehold.co/800x600/1a2027/0ea5e9?text=Kysa+Fashion+Preview" alt="Kysa Fashion Preview" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <a href="#" class="px-6 py-3 bg-white text-dark font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">View Live Site</a>
+                            <a href="https://kysa.clothing/" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-white text-dark font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">Visit Live Store</a>
                         </div>
                     </div>
                     <div>
-                        <h4 class="text-2xl font-bold text-white mb-2">E-Commerce SEO Optimization</h4>
-                        <p class="text-primary font-medium mb-6">Role: Digital Marketing Specialist</p>
+                        <!-- Client Logo Banner -->
+                        <div class="bg-dark/40 border border-gray-800 rounded-xl px-4 py-2 mb-4 inline-block">
+                            <img src="Kysa-Logo-2.webp" alt="Kysa Logo" class="h-8 md:h-10 w-auto object-contain">
+                        </div>
+                        
+                        <h4 class="text-2xl font-bold text-white mb-2">Kysa — E-Commerce Fashion Shop Checkout & UI</h4>
+                        <p class="text-primary font-medium mb-6">Role: Web Developer & UI/UX Specialist</p>
                         
                         <div class="space-y-4 text-gray-400 mb-8">
-                            <p><strong class="text-gray-200">The Challenge:</strong> An established online store was losing rank to competitors and suffering from poor content structure.</p>
-                            <p><strong class="text-gray-200">The Solution:</strong> Conducted a full technical SEO audit, restructured product categories, rewrote product descriptions for search intent, and optimized site speed.</p>
-                            <p><strong class="text-gray-200">The Result:</strong> Regained top 3 search positions for 15 primary keywords, leading to a 25% boost in quarterly sales.</p>
+                            <p><strong class="text-gray-200">The Challenge:</strong> An e-commerce fashion apparel store experienced cart abandonments during customer onboarding due to traditional email checkout forms.</p>
+                            <p><strong class="text-gray-200">The Solution:</strong> Integrated custom HTML widgets and SMS verification workflows to implement a fast, passwordless mobile number authentication system tailored for online shoppers.</p>
+                            <p><strong class="text-gray-200">The Result:</strong> Dramatically reduced checkout friction, leading to a streamlined shopping experience and improved store conversion rates.</p>
                         </div>
 
                         <div class="flex flex-wrap gap-2 mb-8">
-                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">SEO Audit</span>
-                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">Content Strategy</span>
-                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">Google Analytics</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">Fashion E-Commerce</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">Custom HTML/CSS</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">SMS Authentication</span>
                         </div>
-                        <a href="#" class="inline-flex items-center gap-2 text-primary hover:text-white transition-colors font-medium">
-                            Read Full Case Study <i class="ph ph-arrow-right"></i>
+                        <a href="https://kysa.clothing/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-primary hover:text-white transition-colors font-medium">
+                            Visit Live Store <i class="ph ph-arrow-up-right"></i>
                         </a>
+                    </div>
+                </div>
+
+                <!-- Project 4: EasyTeachAcademy -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center reveal">
+                    <div class="order-2 lg:order-1">
+                        <!-- Client Logo Banner -->
+                        <div class="bg-dark/40 border border-gray-800 rounded-xl px-4 py-2 mb-4 inline-block">
+                            <img src="WhatsApp-Image-2025-06-12-at-12.18.51_5f75300c-1-r76set9o2y8ayy1s87pyk370n5hq9gjyrfypon4xwu.webp" alt="EasyTeachAcademy Logo" class="h-8 md:h-10 w-auto object-contain">
+                        </div>
+                        
+                        <h4 class="text-2xl font-bold text-white mb-2">EasyTeachAcademy — Educational Digital Platform</h4>
+                        <p class="text-primary font-medium mb-6">Role: Web Developer & SEO Specialist</p>
+                        
+                        <div class="space-y-4 text-gray-400 mb-8">
+                            <p><strong class="text-gray-200">The Challenge:</strong> An educational academy needed an accessible, well-structured digital hub to showcase programs and attract prospective students.</p>
+                            <p><strong class="text-gray-200">The Solution:</strong> Created a clean, responsive website architecture paired with targeted on-page SEO and structured educational content layouts.</p>
+                            <p><strong class="text-gray-200">The Result:</strong> Enhanced search engine visibility for regional educational queries and improved student inquiry conversions.</p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">WordPress</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">On-Page SEO</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">Content Strategy</span>
+                        </div>
+                        <a href="https://easyteachacademy.com/online-phonics-classes-in-australia/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-primary hover:text-white transition-colors font-medium">
+                            Visit Live Site <i class="ph ph-arrow-up-right"></i>
+                        </a>
+                    </div>
+                    <div class="order-1 lg:order-2 rounded-3xl overflow-hidden border border-gray-800 shadow-2xl group relative h-[300px] sm:h-[400px]">
+                        <img src="https://placehold.co/800x600/1a2027/0ea5e9?text=EasyTeachAcademy+Preview" alt="EasyTeachAcademy Preview" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="https://easyteachacademy.com/online-phonics-classes-in-australia/" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-white text-dark font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">Visit Live Site</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: ZenSound -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center reveal">
+                    <div class="rounded-3xl overflow-hidden border border-gray-800 shadow-2xl group relative h-[300px] sm:h-[400px]">
+                        <img src="https://placehold.co/800x600/1a2027/0ea5e9?text=ZenSound+Project+Preview" alt="ZenSound Preview" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="px-6 py-3 bg-white text-dark font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">Case Study Overview</span>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- Client Logo Banner -->
+                        <div class="bg-dark/40 border border-gray-800 rounded-xl px-4 py-2 mb-4 inline-block">
+                            <img src="Logo ZenSound.jpg" alt="ZenSound Logo" class="h-8 md:h-10 w-auto object-contain">
+                        </div>
+                        
+                        <h4 class="text-2xl font-bold text-white mb-2">ZenSound — D2C Audio & Launch Strategy</h4>
+                        <p class="text-primary font-medium mb-6">Role: Digital Marketing & Brand Strategist</p>
+                        
+                        <div class="space-y-4 text-gray-400 mb-8">
+                            <p><strong class="text-gray-200">The Challenge:</strong> A direct-to-consumer audio brand required a high-impact digital launch strategy and infrastructure to establish credibility in the market.</p>
+                            <p><strong class="text-gray-200">The Solution:</strong> Designed conversion-focused customer funnels, refined product positioning criteria, and executed targeted on-page SEO optimization.</p>
+                            <p><strong class="text-gray-200">The Result:</strong> Built a professional, high-converting digital storefront that successfully positioned the brand for scalable customer acquisition.</p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">Funnel Strategy</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">E-Commerce SEO</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">Brand Launch</span>
+                        </div>
+                        <span class="inline-flex items-center gap-2 text-gray-400 font-medium">
+                            Project Strategy Overview <i class="ph ph-check-circle text-primary"></i>
+                        </span>
                     </div>
                 </div>
                 
                 <div class="text-center mt-12 reveal">
-                    <p class="text-gray-400 mb-4">Have 2+ more projects to explore?</p>
-                    <a href="#" class="inline-flex items-center gap-2 px-6 py-3 border border-gray-700 hover:border-primary text-gray-300 hover:text-primary rounded-full transition-all">
-                        View Complete Portfolio Archive
+                    <p class="text-gray-400 mb-4">Have more projects to explore?</p>
+                    <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 border border-gray-700 hover:border-primary text-gray-300 hover:text-primary rounded-full transition-all">
+                        Request Complete Portfolio Archive
                     </a>
                 </div>
 
             </div>
         </div>
     </section>
+    <!-- ================= END SELECTED WORK SECTION ================= -->
 
+    <!-- ================= ABOUT SECTION ================= -->
     <section id="about" class="py-24 bg-card border-y border-gray-800/50">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div class="reveal">
@@ -422,7 +568,9 @@
             </div>
         </div>
     </section>
+    <!-- ================= END ABOUT SECTION ================= -->
 
+    <!-- ================= CONTACT SECTION ================= -->
     <section id="contact" class="py-24 relative overflow-hidden">
         <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center reveal">
             <h2 class="text-primary font-semibold tracking-wide uppercase text-sm mb-3">What's Next?</h2>
@@ -436,7 +584,9 @@
             </a>
         </div>
     </section>
+    <!-- ================= END CONTACT SECTION ================= -->
 
+    <!-- ================= FOOTER ================= -->
     <footer class="border-t border-gray-800 bg-dark py-10">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="text-gray-400 text-sm">
@@ -450,6 +600,7 @@
             </div>
         </div>
     </footer>
+    <!-- ================= END FOOTER ================= -->
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
