@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SouravJJ4 | Web Developer & Digital Marketer</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons for modern, clean icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config & Custom CSS -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#12171c', // Deep background based on reference
+                        card: '#1a2027', // Slightly lighter for cards
+                        primary: '#0ea5e9', // Sky blue accent from reference
+                        primaryHover: '#0284c7',
+                    },
+                    animation: {
+                        'float-slow': 'float 6s ease-in-out infinite',
+                        'float-medium': 'float 4s ease-in-out infinite',
+                        'float-fast': 'float 3s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #12171c;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #12171c; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0ea5e9; 
+        }
+
+        /* Typing Effect Cursor */
+        .cursor {
+            display: inline-block;
+            width: 2px;
+            background-color: #0ea5e9;
+            animation: blink 1s step-end infinite;
+            vertical-align: text-bottom;
+            height: 1.2em;
+            margin-left: 2px;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Glassmorphism Utilities */
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Scroll Reveal Utility */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #0ea5e9, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-white">
+
+    <nav class="fixed w-full z-50 transition-all duration-300 py-4" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-tighter text-white">
+                Sourav<span class="text-primary">JJ4</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#about" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">About</a>
+                <a href="#expertise" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Expertise</a>
+                <a href="#work" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Work</a>
+                <a href="#contact" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Contact</a>
+                <a href="#resume" class="px-5 py-2 text-sm font-semibold text-white border border-primary/50 hover:border-primary rounded-full hover:bg-primary/10 transition-all">
+                    Resume
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-gray-300 hover:text-white" id="mobile-menu-btn">
+                <i class="ph ph-list text-3xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="fixed inset-0 bg-dark/95 backdrop-blur-md z-40 hidden flex-col items-center justify-center gap-8" id="mobile-menu">
+            <button class="absolute top-6 right-6 text-gray-300 hover:text-white" id="close-menu-btn">
+                <i class="ph ph-x text-3xl"></i>
+            </button>
+            <a href="#about" class="text-xl font-medium text-gray-300 hover:text-white mobile-link">About</a>
+            <a href="#expertise" class="text-xl font-medium text-gray-300 hover:text-white mobile-link">Expertise</a>
+            <a href="#work" class="text-xl font-medium text-gray-300 hover:text-white mobile-link">Work</a>
+            <a href="#contact" class="text-xl font-medium text-gray-300 hover:text-white mobile-link">Contact</a>
+            <a href="#resume" class="px-8 py-3 mt-4 text-lg font-semibold text-white bg-primary rounded-full mobile-link">View Resume</a>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Background subtle glow -->
+        <div class="absolute top-1/4 -left-64 w-96 h-96 bg-primary/20 rounded-full mix-blend-screen filter blur-[120px] opacity-50"></div>
+        <div class="absolute bottom-1/4 -right-64 w-96 h-96 bg-blue-600/20 rounded-full mix-blend-screen filter blur-[120px] opacity-50"></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center relative z-10">
+            
+            <!-- Left Content -->
+            <div class="order-2 lg:order-1 animate-fade-in-up">
+                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-white mb-4 leading-tight">
+                    Hello, I'm <br class="hidden sm:block"/>
+                    <span class="text-primary">SouravJJ4</span>
+                </h1>
+                
+                <!-- Typing Effect Container -->
+                <div class="h-8 sm:h-10 text-xl sm:text-2xl text-gray-300 font-light mb-6 flex items-center">
+                    <span class="mr-2">I am a</span>
+                    <span id="typewriter" class="font-medium text-white"></span><span class="cursor"></span>
+                </div>
+
+                <p class="text-gray-400 text-lg leading-relaxed max-w-xl mb-10">
+                    I build websites that don't just look good — they are engineered to establish a powerful digital presence. Specializing in Web Development, WordPress, and SEO strategies that drive real business growth.
+                </p>
+
+                <div class="flex flex-wrap items-center gap-4 mb-12">
+                    <a href="#work" class="px-8 py-4 bg-primary hover:bg-primaryHover text-white rounded-full font-semibold transition-colors duration-300 shadow-[0_0_20px_rgba(14,165,233,0.3)] hover:shadow-[0_0_25px_rgba(14,165,233,0.5)]">
+                        View My Work
+                    </a>
+                    <a href="#contact" class="px-8 py-4 border border-gray-600 hover:border-white text-white rounded-full font-semibold transition-all duration-300">
+                        Get In Touch
+                    </a>
+                </div>
+
+                <!-- Social Links beneath buttons (like reference) -->
+                <div class="flex items-center gap-5 text-gray-400">
+                    <a href="#" class="hover:text-primary transition-colors hover:-translate-y-1 transform duration-300"><i class="ph-fill ph-linkedin-logo text-2xl"></i></a>
+                    <a href="#" class="hover:text-primary transition-colors hover:-translate-y-1 transform duration-300"><i class="ph-fill ph-github-logo text-2xl"></i></a>
+                    <a href="#" class="hover:text-primary transition-colors hover:-translate-y-1 transform duration-300"><i class="ph-fill ph-twitter-logo text-2xl"></i></a>
+                    <a href="#" class="hover:text-primary transition-colors hover:-translate-y-1 transform duration-300"><i class="ph-fill ph-globe text-2xl"></i></a>
+                </div>
+            </div>
+
+            <!-- Right Content (Image & Badges) -->
+            <div class="order-1 lg:order-2 relative flex justify-center lg:justify-end opacity-0 animate-[fadeInUp_1s_ease-out_0.3s_forwards]">
+                <div class="relative w-72 h-72 sm:w-96 sm:h-96">
+                    <!-- Main Profile Image Placeholder -->
+                    <!-- Replace the src with your actual image later -->
+                    <div class="w-full h-full rounded-[2rem] overflow-hidden border border-gray-800 shadow-2xl relative z-10">
+                        <img src="https://placehold.co/600x600/1a2027/0ea5e9?text=SouravJJ4\nPhoto" alt="SouravJJ4" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                    </div>
+
+                    <!-- Floating Badge 1 (Code/Dev) -->
+                    <div class="glass absolute top-8 -left-8 sm:-left-12 px-4 py-3 rounded-2xl flex items-center gap-3 z-20 shadow-xl animate-float-slow">
+                        <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-primary">
+                            <i class="ph ph-code text-xl"></i>
+                        </div>
+                        <span class="text-white font-medium text-sm">Web Dev</span>
+                    </div>
+
+                    <!-- Floating Badge 2 (SEO/Growth) -->
+                    <div class="glass absolute bottom-16 -left-4 sm:-left-8 px-4 py-3 rounded-2xl flex items-center gap-3 z-20 shadow-xl animate-float-medium">
+                        <div class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400">
+                            <i class="ph ph-trend-up text-xl"></i>
+                        </div>
+                        <span class="text-white font-medium text-sm">SEO & Growth</span>
+                    </div>
+
+                    <!-- Floating Badge 3 (Strategy/Ideas) -->
+                    <div class="glass absolute top-1/3 -right-6 sm:-right-10 px-4 py-3 rounded-2xl flex items-center gap-3 z-20 shadow-xl animate-float-fast">
+                        <div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400">
+                            <i class="ph ph-lightbulb text-xl"></i>
+                        </div>
+                        <span class="text-white font-medium text-sm">Strategy</span>
+                    </div>
+                    
+                    <!-- Decorative dots behind image -->
+                    <div class="absolute -bottom-6 -right-6 text-gray-700 z-0 opacity-50 text-4xl leading-[0.5] tracking-[0.2em] font-serif">
+                        <br>....................<br>....................<br>....................<br>....................
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="expertise" class="py-24 relative z-10 border-t border-gray-800/50 bg-dark/50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h2 class="text-primary font-semibold tracking-wide uppercase text-sm mb-3">Unique Value</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white mb-6">More Than Just a Website</h3>
+                <p class="text-gray-400 text-lg">
+                    I help business owners, startups, and entrepreneurs build a complete digital ecosystem. From the first line of code to the final SEO audit, I handle the technicalities so you can focus on your business.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Skill Card 1 -->
+                <div class="card bg-card border border-gray-800 rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300 reveal group">
+                    <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <i class="ph ph-desktop text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Custom Web Development</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Building responsive, fast-loading, and modern websites from scratch or utilizing low-code tools depending on your project's unique requirements and timeline.
+                    </p>
+                </div>
+
+                <!-- Skill Card 2 -->
+                <div class="card bg-card border border-gray-800 rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300 reveal group" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <i class="ph ph-wordpress-logo text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">WordPress Mastery</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Creating scalable, easy-to-manage, and highly customized WordPress solutions tailored for businesses, real estate, and service providers.
+                    </p>
+                </div>
+
+                <!-- Skill Card 3 -->
+                <div class="card bg-card border border-gray-800 rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300 reveal group" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <i class="ph ph-magnifying-glass text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">SEO & Digital Marketing</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Implementing on-page SEO, optimized content strategies, and performance tweaks to ensure your brand is visible and ranks well on search engines.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="py-24">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="mb-16 reveal">
+                <h2 class="text-primary font-semibold tracking-wide uppercase text-sm mb-3">Selected Work</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white mb-6">Turning Ideas into Digital Reality</h3>
+                <p class="text-gray-400 max-w-2xl">A curated selection of my 5+ recent projects. Each project represents a unique challenge solved through a blend of development, design, and strategic marketing.</p>
+            </div>
+
+            <div class="space-y-24">
+                
+                <!-- Project 1 (Case Study Layout - Image Left, Text Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center reveal">
+                    <div class="rounded-3xl overflow-hidden border border-gray-800 shadow-2xl group relative h-[300px] sm:h-[400px]">
+                        <!-- Placeholder: Replace with actual project image -->
+                        <img src="https://placehold.co/800x600/1a2027/0ea5e9?text=Project+1+Preview" alt="Project 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="#" class="px-6 py-3 bg-white text-dark font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">View Live Site</a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-bold text-white mb-2">Real Estate Firm Digital Overhaul</h4>
+                        <p class="text-primary font-medium mb-6">Role: Lead Developer & SEO Strategist</p>
+                        
+                        <div class="space-y-4 text-gray-400 mb-8">
+                            <p><strong class="text-gray-200">The Challenge:</strong> A local real estate business needed a modern platform to list properties and generate leads organically.</p>
+                            <p><strong class="text-gray-200">The Solution:</strong> Built a custom, lightning-fast WordPress theme integrated with a property management system. Applied strict on-page SEO principles and localized content strategy.</p>
+                            <p><strong class="text-gray-200">The Result:</strong> 40% increase in organic local traffic within 3 months and a significantly improved lead conversion rate.</p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">WordPress</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">PHP</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">Local SEO</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">Tailwind CSS</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center gap-2 text-primary hover:text-white transition-colors font-medium">
+                            Read Full Case Study <i class="ph ph-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 (Case Study Layout - Text Left, Image Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center reveal">
+                    <div class="order-2 lg:order-1">
+                        <h4 class="text-2xl font-bold text-white mb-2">Tech Startup Landing Page</h4>
+                        <p class="text-primary font-medium mb-6">Role: Frontend Developer</p>
+                        
+                        <div class="space-y-4 text-gray-400 mb-8">
+                            <p><strong class="text-gray-200">The Challenge:</strong> A new SaaS startup needed a high-converting, animated landing page to build a waitlist before launch.</p>
+                            <p><strong class="text-gray-200">The Solution:</strong> Developed a custom responsive single-page application focused on micro-interactions and performance optimization to ensure zero drop-off from slow loading.</p>
+                            <p><strong class="text-gray-200">The Result:</strong> Achieved a 98/100 Google Lighthouse score and helped capture over 1,000 early sign-ups.</p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">HTML/CSS/JS</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">Figma to Code</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">Performance Opt.</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center gap-2 text-primary hover:text-white transition-colors font-medium">
+                            View Live Site <i class="ph ph-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="order-1 lg:order-2 rounded-3xl overflow-hidden border border-gray-800 shadow-2xl group relative h-[300px] sm:h-[400px]">
+                        <!-- Placeholder -->
+                        <img src="https://placehold.co/800x600/1a2027/0ea5e9?text=Project+2+Preview" alt="Project 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="#" class="px-6 py-3 bg-white text-dark font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">View Live Site</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 (Case Study Layout - Image Left, Text Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center reveal">
+                    <div class="rounded-3xl overflow-hidden border border-gray-800 shadow-2xl group relative h-[300px] sm:h-[400px]">
+                        <!-- Placeholder -->
+                        <img src="https://placehold.co/800x600/1a2027/0ea5e9?text=Project+3+Preview" alt="Project 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="#" class="px-6 py-3 bg-white text-dark font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">View Live Site</a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-bold text-white mb-2">E-Commerce SEO Optimization</h4>
+                        <p class="text-primary font-medium mb-6">Role: Digital Marketing Specialist</p>
+                        
+                        <div class="space-y-4 text-gray-400 mb-8">
+                            <p><strong class="text-gray-200">The Challenge:</strong> An established online store was losing rank to competitors and suffering from poor content structure.</p>
+                            <p><strong class="text-gray-200">The Solution:</strong> Conducted a full technical SEO audit, restructured product categories, rewrote product descriptions for search intent, and optimized site speed.</p>
+                            <p><strong class="text-gray-200">The Result:</strong> Regained top 3 search positions for 15 primary keywords, leading to a 25% boost in quarterly sales.</p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">SEO Audit</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">Content Strategy</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">Google Analytics</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center gap-2 text-primary hover:text-white transition-colors font-medium">
+                            Read Full Case Study <i class="ph ph-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12 reveal">
+                    <p class="text-gray-400 mb-4">Have 2+ more projects to explore?</p>
+                    <a href="#" class="inline-flex items-center gap-2 px-6 py-3 border border-gray-700 hover:border-primary text-gray-300 hover:text-primary rounded-full transition-all">
+                        View Complete Portfolio Archive
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-card border-y border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="reveal">
+                <h2 class="text-primary font-semibold tracking-wide uppercase text-sm mb-3">About Me</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white mb-6">3+ Years of Bridging Design, Code, and Marketing</h3>
+                <div class="space-y-4 text-gray-400">
+                    <p>
+                        I started my journey exploring how the web works, which quickly evolved into a passion for not just building websites, but making them successful. 
+                    </p>
+                    <p>
+                        Unlike traditional developers who focus solely on code, or marketers who only look at analytics, I combine both worlds. I understand that a beautiful website is useless if no one can find it, and a highly-trafficked site fails if the user experience is poor.
+                    </p>
+                    <p>
+                        My ideal clients are business owners and entrepreneurs who value a holistic approach to their digital presence. From crafting custom WordPress solutions to writing SEO-optimized content, I deliver end-to-end digital assets.
+                    </p>
+                </div>
+            </div>
+            
+            <div id="resume" class="glass rounded-3xl p-8 sm:p-10 border border-gray-700 reveal text-center relative overflow-hidden">
+                <!-- Background decorative element -->
+                <div class="absolute -top-20 -right-20 w-40 h-40 bg-primary/20 rounded-full filter blur-[50px]"></div>
+                
+                <i class="ph ph-file-text text-5xl text-primary mb-4 inline-block"></i>
+                <h4 class="text-2xl font-bold text-white mb-4 relative z-10">Looking for details?</h4>
+                <p class="text-gray-400 mb-8 relative z-10">Download my comprehensive resume to see my full work history, education, and technical skill set.</p>
+                
+                <!-- Replace '#' with the actual path to your PDF resume -->
+                <a href="#" download class="inline-flex items-center gap-2 px-8 py-4 bg-white text-dark hover:bg-gray-200 rounded-full font-bold transition-colors shadow-lg relative z-10">
+                    <i class="ph ph-download-simple text-xl"></i> Download Resume (.pdf)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 relative overflow-hidden">
+        <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center reveal">
+            <h2 class="text-primary font-semibold tracking-wide uppercase text-sm mb-3">What's Next?</h2>
+            <h3 class="text-4xl sm:text-5xl font-bold text-white mb-6">Let's Build Your Digital Presence</h3>
+            <p class="text-gray-400 text-lg mb-10">
+                Whether you need a new website from scratch, an SEO overhaul, or a strategic digital partner for your business, my inbox is always open.
+            </p>
+            
+            <!-- Replace mailto link with your email -->
+            <a href="mailto:hello@example.com" class="inline-block px-10 py-5 bg-primary hover:bg-primaryHover text-white rounded-full font-semibold text-lg transition-all duration-300 shadow-[0_0_20px_rgba(14,165,233,0.3)] hover:shadow-[0_0_30px_rgba(14,165,233,0.6)] hover:-translate-y-1">
+                Say Hello
+            </a>
+        </div>
+    </section>
+
+    <footer class="border-t border-gray-800 bg-dark py-10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-gray-400 text-sm">
+                &copy; <span id="year"></span> SouravJJ4. All rights reserved.
+            </div>
+            
+            <div class="flex items-center gap-6">
+                <!-- Update with your actual social links -->
+                <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="ph-fill ph-linkedin-logo text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="ph-fill ph-github-logo text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="ph-fill ph-twitter-logo text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Update Copyright Year
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Mobile Menu Toggle Logic
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function toggleMenu() {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+                document.body.classList.toggle('overflow-hidden');
+            }
+
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+            closeMenuBtn.addEventListener('click', toggleMenu);
+            
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+
+            // Navbar Scroll Effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-dark/80', 'backdrop-blur-md', 'shadow-sm', 'shadow-gray-900', 'border-b', 'border-gray-800');
+                    navbar.classList.remove('py-4');
+                    navbar.classList.add('py-3');
+                } else {
+                    navbar.classList.remove('bg-dark/80', 'backdrop-blur-md', 'shadow-sm', 'shadow-gray-900', 'border-b', 'border-gray-800');
+                    navbar.classList.add('py-4');
+                    navbar.classList.remove('py-3');
+                }
+            });
+
+            // Scroll Reveal Animation via Intersection Observer
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // Run once
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // Dynamic Typing Effect for Hero Section
+            const words = ["Web Developer.", "Digital Marketer.", "WordPress Expert.", "SEO Strategist."];
+            let i = 0;
+            let timer;
+            let isDeleting = false;
+            let textElement = document.getElementById("typewriter");
+            
+            function typingEffect() {
+                let currentWord = words[i];
+                let currentText = textElement.textContent;
+                
+                if (isDeleting) {
+                    textElement.textContent = currentWord.substring(0, currentText.length - 1);
+                } else {
+                    textElement.textContent = currentWord.substring(0, currentText.length + 1);
+                }
+                
+                let typeSpeed = isDeleting ? 50 : 100;
+                
+                if (!isDeleting && textElement.textContent === currentWord) {
+                    typeSpeed = 2000; // Pause at end of word
+                    isDeleting = true;
+                } else if (isDeleting && textElement.textContent === "") {
+                    isDeleting = false;
+                    i = (i + 1) % words.length; // Loop through words
+                    typeSpeed = 500; // Pause before new word starts
+                }
+                
+                timer = setTimeout(typingEffect, typeSpeed);
+            }
+            
+            // Start typing effect
+            setTimeout(typingEffect, 1000);
+        });
+    </script>
+</body>
+</html>
